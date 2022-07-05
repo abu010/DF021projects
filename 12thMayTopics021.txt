@@ -1,12 +1,5 @@
 
-import {useState} from 'react';
-
-function Login() {
-
-const [uname,setuname]=useState('')
-const [pwd,setpwd]=useState('')
-const [domain,setdomain]=useState('')
-
+THIS IS CHANGED
 
     function login_check()
     {
