@@ -1,0 +1,129 @@
+
+import {useState} from 'react';
+
+function Login() {
+
+const [uname,setuname]=useState('')
+const [pwd,setpwd]=useState('')
+const [domain,setdomain]=useState('')
+
+
+    function login_check()
+    {
+        // alert("Login Successfull..." +uname+" password "+pwd+" demain"+domain)
+        if(domain=='Administrator')
+        {
+            alert("Admin Login Selected welcome Mr "+uname)
+        }
+        else if(domain=='Developer')
+        {
+            alert("Developer Login Selected welcome Mr "+uname)
+        }
+        else if(domain=='Tester')
+        {
+            alert("Tester Login Selected welcome Mr "+uname)
+        }
+
+        
+    }
+
+    function set_uname_val(e)
+    {
+        setuname(e.target.value)
+    }
+
+    function set_pwd_val(e)
+    {
+        setpwd(e.target.value)
+    }
+
+    function set_domain_val(e)
+    {
+        setdomain(e.target.value)
+    }
+
+    return (
+        <div>
+            <form onSubmit={login_check}>
+
+            <h1>Welcome To Cogni021</h1>
+            <hr>
+            </hr>
+            <h2>Login Form</h2>
+            <hr></hr>
+            <table width="40%" border="1">
+
+             <tr>
+                 <td>
+                     UserName
+                 </td>
+                 <td>
+                     <input type="text" placeholder="Enter UserName" onChange={set_uname_val}/>
+                 </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     Password
+                 </td>
+                 <td>
+                     <input type="text" onChange={set_pwd_val} />
+                 </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     Domain
+                 </td>
+                 <td>
+                     <select onChange={set_domain_val}>
+                         <option>--Select--</option>
+                         <option>Administrator</option>
+                         <option>Developer</option>
+                         <option>Tester</option>
+                     </select>
+                 </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     <input type="submit" value="Login" class="btn btn-primary" />
+                 </td>
+                 <td>                  
+                 </td>
+             </tr>
+
+            </table>
+
+            </form>
+        </div>
+
+    )
+
+}
+export default Login;
+
+
+
+
+
+
+import logo from './logo.svg';
+import './App.css';
+import { queryByDisplayValue } from '@testing-library/react';
+import React from 'react';
+import Example from './Example1';
+import Exam1 from './Example2';
+import Login from './Login1';
+
+function App() {
+  return (
+    <div className="App">
+{/* <Example></Example>
+<Exam1></Exam1> */}
+    <Login></Login>
+    </div>
+  );
+}
+
+export default App;
